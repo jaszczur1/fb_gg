@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Website Title</title>
+    <link href="nodeM/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Akademia pływania kieziorowskiego</h1>
+        <nav>
+            <ul class="nav nav-justified" style="background-color: lightblue">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
+                <li role="presentation"><a href="/owner">Właściciele</a></li>
+                <li role="presentation"><a href="/coatch">Trenerzy</a></li>
+                <li role="presentation"><a href="/schedule">Home</a></li>
+                <li role="presentation"><a href="/profile">Profil</a></li>
+                <li role="presentation"><a href="/contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="jumbotron">
+
+            <!-- Load Facebook SDK for JavaScript -->
+            <div id="fb-root"></div>
+            <img src="images/Bartek_male.gif" class="col-md-8">
+            <div id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium col-md-4"><span class="fb_button_text">Logout</span></a></div>
+
+            <div class="fb-comments" data-href="http://localhost:3000/profile" data-numposts="100" data-width="1000"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var token;
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '103744583532463',
+                xfbml: true,
+                version: 'v2.9',
+                cookies: true,
+                status: true
+            });
+
+            FB.login(function (response) {
+
+                console.log(token = response.authResponse.accessToken);
+                console.log(response.authResponse);
+                if (response.authResponse) {
+
+                    FB.api('/me', function (response) {
+                        console.log(response);
+                        $('img').after("<br><div style='font-size:20px; class='clearfix;'>" + response.name + "</div>")
+
+                    });
+
+                }
+            }, {scope: 'publish_actions,user_birthday'});
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.9&appId=103744583532463";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+    <script>
+
+        function fbLogout() {
+
+            FB.getLoginStatus(function (response) {
+                FB.logout(function (res) {
+                    alert('Własie sie wylogowałes');
+                    if (res)
+                        setTimeout(function () {
+                            location.reload();
+                        }, 3000)
+                })
+            });
+        }
+
+    </script>
+
+    <!--kod bootstapa-->
+    <script src="nodeM/jquery/dist/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="nodeM/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--koniec kodu-->
+</body>
+</html>
+
+
+<!--&lt;!&ndash; Your share button code   1294420614012023 &ndash;&gt;-->
+<!--<div class="fb-share-button" data-href="https://91.235.238.85:3000/" data-layout="button_count" data-size="small"-->
+<!--data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank"-->
+<!--href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F91.235.238.85%3A3000%2F&amp;src=sdkpreparse">Udostępnij</a>-->
+<!--</div>-->

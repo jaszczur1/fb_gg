@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Website Title</title>
+    <link href="nodeM/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h1>Akademia pływania kieziorowskiego</h1>
+        <nav>
+            <ul class="nav nav-justified" style="background-color: lightblue">
+                <li role="presentation" class="active"><a href="/">Home</a></li>
+                <li role="presentation"><a href="/owner">Właściciele</a></li>
+                <li role="presentation"><a href="/coatch">Trenerzy</a></li>
+                <li role="presentation"><a href="/schedule">Zapisy</a></li>
+                <li role="presentation"><a href="/profile">Profil</a></li>
+                <li role="presentation"><a href="/contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="jumbotron">
+            <h1 class=col-md-7>Pływalnia Polonez
+            </h1>
+            <div id="map" style="width: 400px; height: 200px;" class="col-lg-offset-7">ok</div>
+
+            <p>Dogodna lokalizacja</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">zapisy online</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Doskonalenie technik i stylów pływackich</h4>
+            Szkoła Pływania "Akademia Kizierowskiego" opracowała autorski program nauczania pływania, który realizujemy
+            na kursach z dziećmi i młodzieżą.
+
+        </div>
+        <div class="col-md-4">
+            <h4>Pierwsze Kroki</h4>
+            Nauka pływania dla Dzieci w wieku przedszkolnym i wczesnoszkolnym.
+            Dlaczego warto aby maluchy wcześniej oswajały się z wodą??
+        </div>
+        <div class="col-md-4"><h4>Właściciele</h4>
+            <h6>mgr Bartosz Kizierowski</h6>
+            olimpijczyk z Atlanty 1996, z Sydney 2000, z Aten 2004 (chorąży), Pekin 2008
+            <h6>mgr Grzegorz Kircun</h6>
+            absolwent AWF w Warszawie
+            mistrz i rekordzista Polski
+
+        </div>
+
+    </div>
+    <!--endContainer-->
+</div>
+
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWjsD8gKWI02cxttSutvX4wxfcPoL9aQw&callback=initMap"></script>
+
+<script src="nodeM/jquery/dist/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="nodeM/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!--http://getbootstrap.com/examples/justified-nav/-->
