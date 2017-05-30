@@ -7,13 +7,10 @@
         <title>Your Website Title</title>
         <link href="nodeM/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="/stylesheets/style.css" rel="stylesheet">
+        <link href="stylesheets/contact.css" rel="stylesheet">
 
     </head>
     <body>
-         <script>
-    
-  
-    </script>
         
         <div class="container">
             <div class="row">
@@ -22,7 +19,7 @@
                     <ul class="nav nav-justified" style="background-color: lightblue">
                         <li role="presentation" class="active"><a href="/">Home</a></li>
                         <li role="presentation"><a href="/owner">Właściciele</a></li>
-                        <li role="presentation"><a href="/coatch">Trenerzy</a></li>
+                        <li role="presentation"><a href="/galery">Trenerzy</a></li>
                         <li role="presentation"><a href="/schedule">Zapisy</a></li>
                         <li role="presentation"><a href="/profile">Profil</a></li>
                         <li role="presentation"><a href="/contact">Kontakt</a></li>
@@ -34,20 +31,16 @@
                 <div class="jumbotron">
                     <img src="images/Bartek_male.gif">
                     <table border="1" style="width: 100%; margin-top: 20px;">
-                        <thead>
-                            <tr>
-                                <th>Wprwadz tresc maila</th>
-                            </tr>
-                        </thead>
+                        
                         <tbody>
                             <tr>
-                                <td>Do</td>
+                                <td>Do: <input id="to"></td>
                             </tr>
                             <tr>
-                                <td>Temat</td>
+                                <td id="topic">Temat<input></td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td>tresc<input id="contentMail"></td>
                             </tr>
                             <tr>
                                 <td><button id="send">Wyslij</button></td>
@@ -56,19 +49,31 @@
                     </table>
                 </div>
 
-
                 <script src="nodeM/jquery/dist/jquery.js"></script>
                 <!-- Include all compiled plugins (below), or include individual files as needed -->
                 <script src="nodeM/bootstrap/dist/js/bootstrap.min.js"></script>
 
-                <!--koniec kontenera   -->
             </div>
+            <!--koniec kontenera   -->
         </div>
 
     </body>
     <script>
        
-    $('#send').click(function (){console.log("siema")});
+    $('#send').click(function (){
+                    
+                          console.log($('#to').val());
+                    
+                          var to  = $('#to').val();
+                          var topic = $('#topic').va();
+                          var content = $('#contentMail').val();
+                        $.ajax({url: "",type: 'POST', data: {
+                             to : to,
+                              topic : topic,
+                              content : content
+                        }   
+                    });
+    });
     
     
     </script>

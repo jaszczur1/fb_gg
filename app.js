@@ -7,9 +7,11 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var owner = require('./routes/owner');
+var galery = require('./routes/galery');
+var schedule = require('./routes/schedule');
 var profile = require('./routes/profile');
 var contact = require('./routes/contact');
-var google = require('./routes/gmailNode');
+
 
 var app = express();
 
@@ -28,9 +30,11 @@ app.use("/nodeM",express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', index);
 app.use('/owner', owner);
+app.use('/galery', galery);
+app.use('/schedule', schedule);
 app.use('/profile', profile);
 app.use('/contact', contact);
-app.use('/google', google);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
