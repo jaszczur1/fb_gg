@@ -12,7 +12,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('schedule', { title: 'Express' });
-
+    console.log(req.cookies);
 });
 
 module.exports = router;

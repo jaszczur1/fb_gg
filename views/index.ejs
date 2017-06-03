@@ -31,7 +31,7 @@
             <div id="map" style="width: 400px; height: 200px;" class="col-lg-offset-7">ok</div>
 
             <p>Dogodna lokalizacja</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">zapisy online</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/schedule" role="button">zapisy online</a></p>
         </div>
     </div>
 
@@ -63,9 +63,19 @@
 <script>
     var map;
     function initMap() {
+        
+        var lat= 52.299036; var lng =21.033707;
+        var myLatLng = {lat: lat, lng: lng};
+        
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
+            center: {lat: lat, lng: lng},
+            zoom: 14
+        });
+        
+         new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Akademia Pływania'
         });
     }
 

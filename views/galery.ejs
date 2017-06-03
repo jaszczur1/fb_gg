@@ -7,6 +7,14 @@
     <title>Your Website Title</title>
     <link href="nodeM/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
+    
+    
+    <script src="nodeM/jquery/dist/jquery.js"></script>
+    <script type='text/javascript' src='nodeM/unitegallery-master/package/unitegallery/js/unitegallery.min.js'></script>
+    <link rel='stylesheet' href='nodeM/unitegallery-master/dist/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='nodeM/unitegallery-master/dist/themes/tiles/ug-theme-tiles.js'></script>
+        <link rel='stylesheet' 	href='nodeM/unitegallery-master/dist/skins/alexis/alexis.css' type='text/css' />
+    
 
 </head>
 <body>
@@ -27,11 +35,107 @@
 
     <div class="row">
         <div class="jumbotron">
-            <img src="../public/images/Bartek_male.gif">
+           
+             <div id="gallery" style="display:none;">
+
+                 <img alt="Image 1 Title" src="images/big/1.JPG"
+                 data-image="images/big/1.jpg"
+                 data-description="Image 1 Description">
+
+            <img alt="Image 2 Title" src="images/big/2.JPG"
+                 data-image="images/big/2.jpg"
+                 data-description="Image 2 Description">
+
+
+            <img alt="Image 2 Title" src="images/big/3.jpg"
+                 data-image="images/big/3.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 1 Title" src="images/big/4.jpg"
+                 data-image="images/big/4.jpg"
+                 data-description="Image 1 Description">
+
+
+            <img alt="Image 2 Title" src="images/big/5.jpg"
+                 data-image="images/big/5.jpg"
+                 data-description="Image 2 Description">
+
+            <img alt="Image 2 Title" src="images/big/6.jpg"
+                 data-image="images/big/6.jpg"
+                 data-description="Image 3 Description">
+
+
+
+            <img alt="Image 1 Title" src="images/big/7.jpg"
+                 data-image="images/big/7.jpg"
+                 data-description="Image 1 Description">
+
+            <img alt="Image 2 Title" src="images/big/8.jpg"
+                 data-image="images/big/8.jpg"
+                 data-description="Image 2 Description">
+
+
+            <img alt="Image 2 Title" src="images/big/9.jpg"
+                 data-image="images/big/9.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 2 Title" src="images/big/10.jpg"
+                 data-image="images/big/10.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 2 Title" src="images/big/11.jpg"
+                 data-image="images/big/11.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 2 Title" src="images/big/12.jpg"
+                 data-image="images/big/12.jpg"
+                 data-description="Image 3 Description">
+
+
+            <img alt="Image 2 Title" src="images/big/20.jpg.jpg"
+                 data-image="images/big/20.jpg"
+                 data-description="Image 3 Description">
+
+
+            <img alt="Image 2 Title" src="images/big/22.jpg"
+                 data-image="images/big/22.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 2 Title" src="images/big/23.jpg"
+                 data-image="images/big/23.jpg"
+                 data-description="Image 3 Description">
+
+            <img alt="Image 2 Title" src="images/big/24.jpg"
+                 data-image="images/big/24.jpg"
+                 data-description="Image 3 Description">
+
+
+        </div> 
+
+
+
+        <script type="text/javascript">
+
+            var api;
+            jQuery(document).ready(function () {
+
+
+                api = jQuery("#gallery").unitegallery({
+
+                    gallery_skin: "alexis", //it's the default skin
+                    slider_bullets_skin: "alexis", //example how to change only skin for slider bullets
+                    gallery_theme: "tiles" //example how to change skin to "compact"s
+
+                });
+                api.play();
+            });
+
+        </script>
+            
         </div>
 
 
-        <script src="nodeM/jquery/dist/jquery.js"></script>
+       
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="nodeM/bootstrap/dist/js/bootstrap.min.js"></script>
 

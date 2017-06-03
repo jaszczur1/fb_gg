@@ -6,10 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Your Website Title</title>
         <link href="nodeM/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/stylesheets/style.css" rel="stylesheet">
-        
+        <link href="stylesheets/schedule.css" rel="stylesheet">
+
         <link rel='stylesheet' href='nodeM/fullcalendar/dist/fullcalendar.css' />
-        
 
     </head>
     <body>
@@ -41,20 +40,28 @@
                 <!--koniec kontenera   -->
             </div>
         </div>
+
+        <div id="test">test</div>
+
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
 
-    $('#calendar').fullCalendar({
-        dayClick: function() {
-        alert('a day has been clicked!');
-    }
-    })
+                $('#calendar').fullCalendar({
+                    dayClick: function () {
+                        alert('a day has been clicked!');
+                    }
+                });
+                $('.fc-day-header').addClass('myFaceBook');
+                $('.fc-day-header').append('<img src="images/agata123.jpg" class="img-circle" style="width: 50px; height: 60px;">')
 
-});
+//      <img src="images/zajecia1.JPG">
+            });
         </script>
-        
+        <!--<img src="images/zajecia1.JPG" class="img-circle" width="65px;">-->
         <script src='nodeM/jquery/dist/jquery.min.js'></script>
         <script src='nodeM/moment/min/moment.min.js'></script>
         <script src='nodeM/fullcalendar/dist/fullcalendar.js'></script>
+<!--      <img src="images/agata123.jpg" class="img-circle" style="width: 50px; height: 50px;">-->
+        
     </body>
 </html>

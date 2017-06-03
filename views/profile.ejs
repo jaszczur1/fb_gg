@@ -43,7 +43,7 @@
         var token;
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '103744583532463',
+                appId: 103744583532463,
                 xfbml: true,
                 version: 'v2.9',
                 cookies: true,
@@ -55,13 +55,19 @@
                 console.log(token = response.authResponse.accessToken);
                 console.log(response.authResponse);
                 if (response.authResponse) {
-
+                       
                     FB.api('/me', function (response) {
                         console.log(response);
                         $('img').after("<br><div style='font-size:20px; class='clearfix;'>" + response.name + "</div>")
-
+                      
+                            $.ajax({
+                                type: 'get',
+                                url: "/profile/cookie",
+                                data:{
+                                  name : response.name}
+                            })
+                           console.log(response);
                     });
-
                 }
             }, {scope: 'publish_actions,user_birthday'});
 
@@ -84,10 +90,13 @@
 
             FB.getLoginStatus(function (response) {
                 FB.logout(function (res) {
-                    alert('Własie sie wylogowałes');
                     if (res)
                         setTimeout(function () {
-                            location.reload();
+                            
+                         $('#fbLogout').text('wylogowany');
+                        
+                            
+                         //   location.reload();
                         }, 3000)
                 })
             });
