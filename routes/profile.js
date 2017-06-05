@@ -8,6 +8,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
 
     res.render('profile', {title: 'Express', appId: 103744583532463});
+    res.end();
 
 });
 

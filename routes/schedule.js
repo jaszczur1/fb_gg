@@ -13,6 +13,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('schedule', { title: 'Express' });
     console.log(req.cookies);
+    res.end();
 });
 
 module.exports = router;
