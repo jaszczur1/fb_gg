@@ -11,6 +11,7 @@ var galery = require('./routes/galery');
 var schedule = require('./routes/schedule');
 var profile = require('./routes/profile');
 var contact = require('./routes/contact');
+var logged = require('./routes/logged');
 
 
 var app = express();
@@ -34,7 +35,7 @@ app.use('/galery', galery);
 app.use('/schedule', schedule);
 app.use('/profile', profile);
 app.use('/contact', contact);
-
+app.use('/logged', logged);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

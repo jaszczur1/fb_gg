@@ -55,10 +55,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/google/callback', function (req, res, next) {
 
-
-
     res.render('contact', {title: 'Express'}, function () {
-      
+
         console.log("callback");
         // get param to use get token
         code = req.param("code");
@@ -151,8 +149,9 @@ router.get('/google/callback', function (req, res, next) {
         }, 5000);
 
     });
-    
-res.render('contact');
+    res.redirect('/logged');
+    res.end();
+
 });
 
 //router.all('/sendMessage', function (req, res, next) {
