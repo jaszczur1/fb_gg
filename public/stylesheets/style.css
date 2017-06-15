@@ -1,12 +1,22 @@
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+
+@media (max-width: 768px) {
+
+/*      li {font-size: 1.1em}*/
+}
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1200px){  }
+@media (min-width: 769px) and (max-width: 1200px){ 
+        
+/*   li {font-size: 1.3em}*/
+
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-  img{width: 50%}
+   a{ font-size: 1.7em; }
+
+    img{width: 50%}
 
 }
